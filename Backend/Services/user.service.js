@@ -1,8 +1,8 @@
-import userModel from "../Model/user.model";
+import userModel from "../Model/user.model.js";
 
 
 
-export default createUser = async({
+const  createUser = async({
     firstname,email, password, 
 }) =>{
     if(!firstname  || !email || !password){
@@ -20,3 +20,5 @@ export default createUser = async({
 
     return user
 }
+
+export default createUser;

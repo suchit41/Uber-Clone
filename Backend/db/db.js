@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 
 
-export default ConnectToDB = async function (){
+const ConnectToDB = async()=>{
 
     const connect = mongoose.connect(process.env.DB_CONNECT
     ).then(() => {
@@ -11,3 +11,4 @@ export default ConnectToDB = async function (){
 }
 
 
+export default ConnectToDB;
