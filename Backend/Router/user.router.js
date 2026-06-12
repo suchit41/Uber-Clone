@@ -6,6 +6,7 @@ import {
   getUserProfile,
   blackListToken
 } from "../Controller/user.controller.js";
+import authMiddleware from "../middleware/auth.middleware.js";
 
 const router = express.Router();
 
@@ -38,8 +39,8 @@ router.post(
   loginUser
 );
 
-router.post("/logout", blackListToken);
+router.post("/logout", authMiddleware.authUser,blackListToken);
 
-router.get("/get-profile", getUserProfile);
+router.get("/get-profile",authMiddleware.authUser, getUserProfile);
 
 export default router;
